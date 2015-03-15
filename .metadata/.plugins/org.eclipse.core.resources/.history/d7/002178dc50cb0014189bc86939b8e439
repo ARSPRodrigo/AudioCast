@@ -10,6 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AudiocastActivity" >
 
+        <ToggleButton
+            android:id="@+id/Record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+        	android:textSize="20sp"
+        	android:textOff="Record and broadcast"
+            android:textOn="Receive and play" />
+
         <!-- <ToggleButton
             android:id="@+id/Play"
             android:layout_width="wrap_content"
@@ -30,16 +41,5 @@
             android:layout_marginTop="40dp"
             android:text="iKast"
             android:textSize="40sp" />
-
-        <ToggleButton
-            android:id="@+id/Record"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="135dp"
-            android:textOff="Record and broadcast"
-            android:textOn="Receive and play"
-            android:textSize="20sp" />
         
 </RelativeLayout>

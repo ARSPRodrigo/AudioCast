@@ -61,13 +61,13 @@ public class AudiocastActivity extends Activity {
 			public void onClick(View v) {
 					//recording and broadcasting
 					rec.pause(!((ToggleButton)v).isChecked());
-					if(((ToggleButton)v).isChecked()) Sender.broadcasting = true;
-					else Sender.broadcasting = false;
+					if(((ToggleButton)v).isChecked()) Server.broadcast = true;
+					else Server.broadcast = false;
 					
 					//receiving and playing
 					play.pause(((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving=true;
-					else Reciever.receiving = false;
+					if(!((ToggleButton)v).isChecked()) Client.receive=true;
+					else Client.receive = false;
 			}
 		});		
 		/*findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
