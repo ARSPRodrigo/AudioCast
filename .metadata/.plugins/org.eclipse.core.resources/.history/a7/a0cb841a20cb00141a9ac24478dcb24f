@@ -15,8 +15,8 @@ import audiocast.audio.Play;
 import audiocast.audio.Record;
 import co324.audiocast.R;
 
-/* 
- * Prasanna Rodrigo
+/** 
+ * @author (C) ziyan maraikar
  */
 public class AudiocastActivity extends Activity {
 	final static int SAMPLE_HZ = 11025, BACKLOG = 8;	
