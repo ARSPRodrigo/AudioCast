@@ -21,7 +21,8 @@ import co324.audiocast.R;
  * Prasanna Rodrigo
  */
 public class AudiocastActivity extends Activity {
-	final static int SAMPLE_HZ = 11025, BACKLOG = 8;
+	final static int SAMPLE_HZ = 11025, BACKLOG = 8;	
+//	final static InetSocketAddress multicast = new InetSocketAddress("224.0.0.1", 3210);
 	
 	Record rec; 
 	Play play;
