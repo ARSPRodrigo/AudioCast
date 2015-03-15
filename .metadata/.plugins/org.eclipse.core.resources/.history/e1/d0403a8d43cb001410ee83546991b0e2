@@ -60,22 +60,24 @@ public class AudiocastActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 					rec.pause(!((ToggleButton)v).isChecked());
-					if(((ToggleButton)v).isChecked()) Sender.broadcasting = true;
+					if(((ToggleButton)v).isChecked()){
+						Sender.broadcasting = true;
+						//Reciever.receiving = false;
+					}
 					else Sender.broadcasting = false;
-					
-					play.pause(((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving = true;
-					else Reciever.receiving = false;
 			}
 		});		
-		/*findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 					play.pause(!((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving = true;
+					if(!((ToggleButton)v).isChecked()) {
+						Reciever.receiving = true;
+						//Sender.broadcasting = false;
+					}
 					else Reciever.receiving = false;
 			}
-		});	*/
+		});	
 		
 		Log.i("Audiocast", "Starting recording/playback threads");
 		rec.start();

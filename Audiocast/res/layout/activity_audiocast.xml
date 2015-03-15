@@ -20,7 +20,7 @@
         	android:textOff="Record and broadcast"
             android:textOn="Stop transmission" />
 
-        <ToggleButton
+        <!-- <ToggleButton
             android:id="@+id/Play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_marginTop="100dp"
             android:textSize="20sp" 
             android:textOff="Receive and play"
-            android:textOn="Stop reception" />
+            android:textOn="Stop reception" /> -->
 
         <TextView
             android:id="@+id/title"
