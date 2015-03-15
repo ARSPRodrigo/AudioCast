@@ -13,20 +13,17 @@ import android.view.View.OnClickListener;
 import android.widget.ToggleButton;
 import audiocast.audio.Play;
 import audiocast.audio.Record;
-import audiocast.com.Reciever;
-import audiocast.com.Sender;
 import co324.audiocast.R;
 
-/* 
- * Prasanna Rodrigo
+/** 
+ * @author (C) ziyan maraikar
  */
 public class AudiocastActivity extends Activity {
-	final static int SAMPLE_HZ = 11025, BACKLOG = 8;
+	final static int SAMPLE_HZ = 11025, BACKLOG = 8;	
+//	final static InetSocketAddress multicast = new InetSocketAddress("224.0.0.1", 3210);
 	
 	Record rec; 
 	Play play;
-	Sender sender;
-	Reciever receiver;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,35 +46,26 @@ public class AudiocastActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 
-		BlockingQueue<byte[]> recordBuff = new ArrayBlockingQueue<byte[]>(BACKLOG);	
-		BlockingQueue<byte[]> playBuff = new ArrayBlockingQueue<byte[]>(BACKLOG);		
-		rec = new Record(SAMPLE_HZ, recordBuff);
-		play = new Play(SAMPLE_HZ, recordBuff);
-		sender = new Sender(recordBuff);
-		receiver = new Reciever(playBuff);
+		BlockingQueue<byte[]> buf = new ArrayBlockingQueue<byte[]>(BACKLOG);		
+		rec = new Record(SAMPLE_HZ, buf);
+		play = new Play(SAMPLE_HZ, buf);
 		
 		findViewById(R.id.Record).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 					rec.pause(!((ToggleButton)v).isChecked());
-					if(((ToggleButton)v).isChecked()) Sender.broadcasting = true;
-					else Sender.broadcasting = false;
 			}
 		});		
 		findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 					play.pause(!((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving = true;
-					else Reciever.receiving = false;
 			}
 		});	
 		
 		Log.i("Audiocast", "Starting recording/playback threads");
 		rec.start();
 		play.start();
-		sender.start();
-		receiver.start();
 	}
 	
 	@Override
@@ -87,7 +75,5 @@ public class AudiocastActivity extends Activity {
 		Log.i("Audiocast", "Stopping recording/playback threads");
 		rec.interrupt();
 		play.interrupt();
-		sender.interrupt();
-		receiver.interrupt();
 	}
 }
