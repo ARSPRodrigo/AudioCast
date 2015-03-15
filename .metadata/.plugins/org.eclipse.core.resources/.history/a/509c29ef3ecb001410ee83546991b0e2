@@ -28,9 +28,6 @@ public class Sender extends Thread{
 		} catch (IOException e){
 			Log.e("Audiocast", "IOException in Sender construction");
 			e.printStackTrace();
-		} catch (Exception e){
-			Log.e("Audiocast", "Exception in Sender construction");
-			e.printStackTrace();
 		}
 		Log.d("Audiocast", "Sender construction success");
 	}
@@ -53,9 +50,6 @@ public class Sender extends Thread{
 			}
 		} catch(InterruptedException e){
 			Log.e("Audiocast", "InterruptedException in packet sending");
-			e.printStackTrace();
-		} catch (Exception e){
-			Log.e("Audiocast", "Exception in Sender construction");
 			e.printStackTrace();
 		} finally{
 			try{

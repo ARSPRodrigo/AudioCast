@@ -24,13 +24,8 @@ public class Sender extends Thread{
 			ms.joinGroup(groupAddr);
 		} catch (UnknownHostException e){
 			Log.e("Audiocast", "UnknownHostException in Sender construction");
-			e.printStackTrace();
 		} catch (IOException e){
 			Log.e("Audiocast", "IOException in Sender construction");
-			e.printStackTrace();
-		} catch (Exception e){
-			Log.e("Audiocast", "Exception in Sender construction");
-			e.printStackTrace();
 		}
 		Log.d("Audiocast", "Sender construction success");
 	}
@@ -48,21 +43,15 @@ public class Sender extends Thread{
 					if(broadcasting) ms.send(dPacket);
 				} catch(IOException e){
 					Log.e("Audiocast", "IOException in packet sending");
-					e.printStackTrace();
 				}
 			}
 		} catch(InterruptedException e){
 			Log.e("Audiocast", "InterruptedException in packet sending");
-			e.printStackTrace();
-		} catch (Exception e){
-			Log.e("Audiocast", "Exception in Sender construction");
-			e.printStackTrace();
 		} finally{
 			try{
 				ms.leaveGroup(groupAddr);
 			} catch(IOException e){
 				Log.e("Audiocast", "IOException in group leaving");
-				e.printStackTrace();
 			}
 		}
 	}

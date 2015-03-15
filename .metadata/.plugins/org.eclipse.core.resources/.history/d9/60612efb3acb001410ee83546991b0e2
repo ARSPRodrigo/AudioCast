@@ -12,7 +12,8 @@ public class Reciever extends Thread{
 	final static int MAXLEN = 1400;
 	public static boolean receiving = false;
 	final String host = "228.5.5.5";
-	final int port = 6800;
+	final int port = 4567;
+	InetAddress Host;
 	final BlockingQueue<byte[]> queue;
 	
 	public Reciever(BlockingQueue<byte[]> queue) {
