@@ -1,3 +1,8 @@
+<!--  **Group Members**
+ * E/11/054
+ * E/11/067
+ *-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,8 +24,8 @@
         	android:textSize="20sp"
         	android:textOff="Record and broadcast"
             android:textOn="Receive and play" />
-
-        <!-- <ToggleButton
+<!--  
+        <ToggleButton
             android:id="@+id/Play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,8 +34,8 @@
             android:layout_marginTop="100dp"
             android:textSize="20sp" 
             android:textOff="Receive and play"
-            android:textOn="Stop reception" /> -->
-
+            android:textOn="Stop reception" />
+-->
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -38,7 +43,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="Wifi Audiocast"
+            android:text="@string/wifi_audiocast"
             android:textSize="20sp" />
         
 </RelativeLayout>

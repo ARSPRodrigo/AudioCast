@@ -1,3 +1,8 @@
+/**Group Members**
+ * E/11/054
+ * E/11/067
+ */
+
 package audiocast.audio;
 
 import java.util.concurrent.BlockingQueue;
@@ -18,7 +23,7 @@ public final class Record extends Thread {
 
 		int bufsize = AudioRecord.getMinBufferSize(
 				sampleHz, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT);
-		Log.i("Audiocast","initialised recorder with buffer length "+ bufsize);
+		Log.i("buffer","initialised recorder with buffer length "+ bufsize);
 		
 		stream = new AudioRecord(
 					MediaRecorder.AudioSource.MIC,

@@ -7,6 +7,8 @@
 <fullyQualifiedTypeName name="java.net.DatagramPacket"/>
 <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 <fullyQualifiedTypeName name="audiocast.com.Sender"/>
-<fullyQualifiedTypeName name="android.widget.ToggleButton"/>
 <fullyQualifiedTypeName name="audiocast.com.Reciever"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="audiocast.ui.AudiocastActivity"/>
+<fullyQualifiedTypeName name="android.widget.ToggleButton"/>
 </qualifiedTypeNameHistroy>

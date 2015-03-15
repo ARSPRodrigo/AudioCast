@@ -1,3 +1,8 @@
+/**Group Members**
+ * E/11/054
+ * E/11/067
+ */
+
 package audiocast.ui;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -7,31 +12,39 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ToggleButton;
 import audiocast.audio.Play;
 import audiocast.audio.Record;
-import audiocast.com.Reciever;
-import audiocast.com.Sender;
+import audiocast.udp.Client;
+import audiocast.udp.Server;
 import co324.audiocast.R;
 
-/* 
- * Prasanna Rodrigo
+/** 
+ * @author (C) ziyan maraikar
  */
 public class AudiocastActivity extends Activity {
-	final static int SAMPLE_HZ = 11025, BACKLOG = 8;
+	final static int SAMPLE_HZ = 22050, BACKLOG = 8;
+	
+	protected PowerManager.WakeLock mWakeLock;
 	
 	Record rec; 
 	Play play;
-	Sender sender;
-	Reciever receiver;
+	Server server;
+	Client client;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_audiocast);
+		
+		//to keep the screen on
+		final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+        this.mWakeLock.acquire();
 		
 		WifiManager wifi = (WifiManager)getSystemService( Context.WIFI_SERVICE );
 		if(wifi != null){
@@ -49,58 +62,62 @@ public class AudiocastActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 
-		BlockingQueue<byte[]> recordBuff = new ArrayBlockingQueue<byte[]>(BACKLOG);	
-		BlockingQueue<byte[]> playBuff = new ArrayBlockingQueue<byte[]>(BACKLOG);		
-		rec = new Record(SAMPLE_HZ, recordBuff);
-		play = new Play(SAMPLE_HZ, recordBuff);
-		sender = new Sender(recordBuff);
-		receiver = new Reciever(playBuff);
+		BlockingQueue<byte[]> recbuf = new ArrayBlockingQueue<byte[]>(BACKLOG);
+		BlockingQueue<byte[]> playbuf = new ArrayBlockingQueue<byte[]>(BACKLOG);
+		
+		rec = new Record(SAMPLE_HZ, recbuf);
+		play = new Play(SAMPLE_HZ, playbuf);
+		server = new Server(recbuf);
+		client = new Client(playbuf);
 		
 		findViewById(R.id.Record).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ToggleButton btn = (ToggleButton)v;
-					/*rec.pause(!((ToggleButton)v).isChecked());
-					if(((ToggleButton)v).isChecked()) Sender.broadcasting = true;
-					else Sender.broadcasting = false;
+					//recording and broadcasting
+					rec.pause(!((ToggleButton)v).isChecked());
+					if(((ToggleButton)v).isChecked()) Server.broadcast = true;
+					else Server.broadcast = false;
 					
+					//receiving and playing
 					play.pause(((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving = true;
-					else Reciever.receiving = false;*/
-				
-				rec.pause(!btn.isChecked());
-				if(!btn.isChecked()) Reciever.receiving = true;
-				else Reciever.receiving = false;
-				
-				play.pause(btn.isChecked());
-				if(btn.isChecked()) Sender.broadcasting = true;
-				else Sender.broadcasting = false;
+					if(!((ToggleButton)v).isChecked()) Client.receive=true;
+					else Client.receive = false;
 			}
-		});		
-		/*findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
+		});
+		/*
+		findViewById(R.id.Play).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 					play.pause(!((ToggleButton)v).isChecked());
-					if(!((ToggleButton)v).isChecked()) Reciever.receiving = true;
-					else Reciever.receiving = false;
+					if(((ToggleButton)v).isChecked()) Client.receive=true;
+					else Client.receive = false;
 			}
-		});	*/
+		});	
+		*/
 		
-		Log.i("Audiocast", "Starting recording/playback threads");
+		Log.i("Audiocast", "Starting all threads");
 		rec.start();
 		play.start();
-		sender.start();
-		receiver.start();
+		server.start();
+		client.start();
 	}
 	
 	@Override
 	protected void onStop() {
 		super.onStop();
 		
-		Log.i("Audiocast", "Stopping recording/playback threads");
+		Log.i("Audiocast", "Stopping all threads");
 		rec.interrupt();
 		play.interrupt();
-		sender.interrupt();
-		receiver.interrupt();
+		server.interrupt();
+		client.interrupt();
 	}
+	
+	 @Override
+	    public void onDestroy() {
+	        this.mWakeLock.release();
+	        super.onDestroy();
+	    }
 }
+
+
