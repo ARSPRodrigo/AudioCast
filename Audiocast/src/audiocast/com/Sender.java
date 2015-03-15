@@ -3,7 +3,6 @@ package audiocast.com;
 import java.io.IOException;
 import java.net.*;
 import java.util.concurrent.*;
-
 import android.util.Log;
 
 public class Sender extends Thread{

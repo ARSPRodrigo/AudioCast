@@ -6,17 +6,17 @@ import java.util.concurrent.*;
 
 import android.util.Log;
 
-public class Reciever extends Thread{
+public class Sender extends Thread{
 	private static MulticastSocket ms = null;
 	private static InetAddress groupAddr;
 	final static int MAXLEN = 1400;
-	public static boolean receiving = false;
+	public static boolean broadcasting = false;
 	final String host = "228.5.5.5";
 	final int port = 4567;
-	InetAddress Host;
+	
 	final BlockingQueue<byte[]> queue;
 	
-	public Reciever(BlockingQueue<byte[]> queue) {
+	public Sender(BlockingQueue<byte[]> queue){
 		this.queue = queue;
 		
 		try {
@@ -24,11 +24,11 @@ public class Reciever extends Thread{
 			ms = new MulticastSocket(port);
 			ms.joinGroup(groupAddr);
 		} catch (UnknownHostException e){
-			Log.e("Audiocast", "UnknownHostException in Receiver construction");
+			Log.e("Audiocast", "UnknownHostException in Sender construction");
 		} catch (IOException e){
-			Log.e("Audiocast", "IOException in Receiver construction");
+			Log.e("Audiocast", "IOException in Sender construction");
 		}
-		Log.d("Audiocast", "Sender Receiver success");
+		Log.d("Audiocast", "Sender construction success");
 	}
 	
 	@Override
@@ -38,22 +38,21 @@ public class Reciever extends Thread{
 			DatagramPacket dPacket;
 			
 			while(!Thread.interrupted()){
-				dPacket = new DatagramPacket(packet, MAXLEN);
+				packet = queue.take();
+				dPacket = new DatagramPacket(packet, MAXLEN, groupAddr, port);
 				try{
-					if(receiving) ms.receive(dPacket);
-					packet = dPacket.getData();
-					queue.put(packet);
+					if(broadcasting) ms.send(dPacket);
 				} catch(IOException e){
-					Log.e("Audiocast", "IOException in packet receiving");
+					Log.e("Audiocast", "IOException in packet sending");
 				}
 			}
 		} catch(InterruptedException e){
-			Log.e("Audiocast", "InterruptedException in packet receiving");
+			Log.e("Audiocast", "InterruptedException in packet sending");
 		} finally{
 			try{
 				ms.leaveGroup(groupAddr);
 			} catch(IOException e){
-				Log.e("Audiocast", "IOException in group receiving");
+				Log.e("Audiocast", "IOException in group leaving");
 			}
 		}
 	}
