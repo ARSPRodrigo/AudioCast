@@ -1,0 +1,189 @@
+!SESSION 2015-03-15 14:22:12.043 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.adtproduct
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.adtproduct
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-03-15 15:09:22.425
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Prasanna'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2015-03-15 15:09:30.405
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.core.resources 4 4 2015-03-15 15:11:22.016
+!MESSAGE Exception occurred while saving project preferences: /Audiocast/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:513)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:422)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:296)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:837)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:660)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:590)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$3.execute(NewProjectCreator.java:400)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2015-03-15 15:11:22.046
+!MESSAGE A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2015-03-15 15:11:22.052
+!MESSAGE Exception occurred while saving project preferences: /Audiocast/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:515)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:422)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:296)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:837)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:660)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:590)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$3.execute(NewProjectCreator.java:400)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2015-03-15 15:11:22.052
+!MESSAGE A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+
+!ENTRY org.eclipse.core.resources 4 4 2015-03-15 15:11:22.056
+!MESSAGE Exception occurred while saving project preferences: /Audiocast/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:95)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:566)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOption(JavaProject.java:2953)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.checkAndFixCompilerCompliance(ProjectHelper.java:517)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProjectClasspathEntries(ProjectHelper.java:422)
+	at com.android.ide.eclipse.adt.internal.project.ProjectHelper.fixProject(ProjectHelper.java:296)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:837)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createProjectAsync(NewProjectCreator.java:660)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$0(NewProjectCreator.java:590)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$3.execute(NewProjectCreator.java:400)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation$1.run(WorkspaceModifyOperation.java:106)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:118)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2015-03-15 15:11:22.057
+!MESSAGE A resource already exists on disk 'A:\Softwares\adt-bundle-windows-x86_64-20140702\AudioCast\Audiocast\.settings'.
+!SESSION 2015-03-15 17:04:48.306 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.adtproduct
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.adtproduct
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-03-15 17:05:12.338
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Prasanna'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:22.901
+!MESSAGE System property http.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:22.901
+!MESSAGE System property http.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:22.901
+!MESSAGE System property https.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:22.901
+!MESSAGE System property https.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.725
+!MESSAGE System property http.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.740
+!MESSAGE System property http.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.740
+!MESSAGE System property https.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.740
+!MESSAGE System property https.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.756
+!MESSAGE System property http.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.756
+!MESSAGE System property http.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.756
+!MESSAGE System property https.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:28.756
+!MESSAGE System property https.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.771
+!MESSAGE System property http.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.771
+!MESSAGE System property http.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.771
+!MESSAGE System property https.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.771
+!MESSAGE System property https.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.787
+!MESSAGE System property http.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.787
+!MESSAGE System property http.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.787
+!MESSAGE System property https.proxyHost is set to cachex.pdn.ac.lk but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-15 17:05:29.803
+!MESSAGE System property https.proxyPort is set to 3128 but should not be set.
+
+!ENTRY org.eclipse.ui 2 2 2015-03-15 17:06:10.158
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2015-03-15 18:31:12.738 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.adtproduct
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.adtproduct
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-03-15 18:31:30.293
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Prasanna'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2015-03-15 18:32:14.869
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
