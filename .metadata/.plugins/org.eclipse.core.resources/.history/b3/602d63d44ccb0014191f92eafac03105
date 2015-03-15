@@ -33,8 +33,6 @@ public class Server extends Thread{
 			Log.e("Audiocast", "UnknownHostException at srver construction");
 		} catch (IOException e) {
 			Log.e("Audiocast", "IOException at srver construction");
-		} catch (Exception e) {
-			// TODO: handle exception
 		}
     	Log.d("Audiocast", "server costruction success.");
     }
@@ -55,16 +53,12 @@ public class Server extends Thread{
 				}
 			}
 		} catch (InterruptedException e) {
-		} catch (Exception e) {
-			// TODO: handle exception
 		} finally {
 			//s.close();
 			try {
 				s.leaveGroup(group);
 			} catch (IOException e) {
 				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO: handle exception
 			}
 		}
 
