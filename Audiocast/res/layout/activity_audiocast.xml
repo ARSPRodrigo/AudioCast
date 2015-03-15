@@ -18,7 +18,7 @@
             android:layout_marginTop="100dp"
         	android:textSize="20sp"
         	android:textOff="Record and broadcast"
-            android:textOn="Stop transmission" />
+            android:textOn="Receive and play" />
 
         <!-- <ToggleButton
             android:id="@+id/Play"

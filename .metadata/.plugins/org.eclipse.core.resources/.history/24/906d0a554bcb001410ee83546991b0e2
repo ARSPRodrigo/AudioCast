@@ -73,7 +73,7 @@ public class AudiocastActivity extends Activity {
 				else Reciever.receiving = false;
 				
 				play.pause(btn.isChecked());
-				if(btn.isChecked()) Sender.broadcasting = true;
+				if(((ToggleButton)v).isChecked()) Sender.broadcasting = true;
 				else Sender.broadcasting = false;
 			}
 		});		
